@@ -18,15 +18,8 @@ namespace CollectionsMasterConsoleUI
 
             //TODO: Create a method to populate the number array with 50 random numbers that are between 0 and 50
 
-            void RandomNumbers(int[] myArray, int min, int max)
-            {
-                Random rng = new Random();
-                for (int i = 0; i < myArray.Length; i++)
-                {
-                    myArray[i] = rng.Next(min, max + 1);
-                }
-            }
-            RandomNumbers(myArray, 1, 50);
+           
+            Populater(myArray, 1, 50);
             
 
             //TODO: Print the first number of the array
@@ -47,6 +40,8 @@ namespace CollectionsMasterConsoleUI
             /*  1) First way, using a custom method => Hint: Array._____(); 
                 2) Second way, Create a custom method (scroll to bottom of page to find ⬇⬇⬇)
             */
+            
+            ReverseArray(myArray);
             Array.Reverse(myArray);
             
 
@@ -175,15 +170,24 @@ namespace CollectionsMasterConsoleUI
 
         }
 
-        private static void Populater(int[] numbers)
+        private static void Populater(int[] myArray, int min, int max)
         {
             Random rng = new Random();
+            for (int i = 0; i < myArray.Length; i++)
+            {
+                myArray[i] = rng.Next(0,51);
+            }
 
         }        
 
         private static void ReverseArray(int[] array)
         {
-            
+            int[] reversedArray = new int[array.Length];
+
+            for (int i = 0; i < array.Length; i++)
+            {
+                reversedArray[i] = array[array.Length - 1 - i];
+            }
         }
 
         /// <summary>
